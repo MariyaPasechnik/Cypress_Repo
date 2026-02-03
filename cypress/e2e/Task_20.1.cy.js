@@ -1,4 +1,4 @@
-import '../../../cypress/support/commands'
+import '../support/commands'
 describe('Check button Sign In', () => {
   it('Check registration form', () => {
       cy.loginAsGuest()

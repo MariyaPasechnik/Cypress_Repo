@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open:qauto": "cypress open --env config=qauto",
+    "cypress:open:qauto2": "cypress open --env config=qauto2",
+    "cypress:run:qauto": "cypress run --env config=qauto",
+    "cypress:run:qauto2": "cypress run --env config=qauto2"
   },
   "repository": {
     "type": "git",
@@ -20,6 +24,7 @@
   "homepage": "https://github.com/MariyaPasechnik/Cypress_Repo#readme",
   "devDependencies": {
     "@cypress/xpath": "^2.0.3",
-    "cypress": "^15.9.0"
+    "cypress": "^15.9.0",
+    "mochawesome": "^7.1.4"
   }
 }
