@@ -9,6 +9,20 @@ Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
   }
   return originalFn(element, text, options);
 });
-Cypress.Commands.add('loginAsGuest', () => {
-  cy.visit('https://guest:welcome2qauto@qauto.forstudy.space/')
-})
+Cypress.Commands.add('createExpense', (carName, liters, totalCost) => {
+
+    cy.contains('.car-item', carName)
+      .first()
+      .within(() => {
+          cy.contains('button', 'Add fuel').click();
+      });
+
+    cy.get('#addExpenseLiters').should('be.visible').clear().type(liters);
+    cy.get('#addExpenseTotalCost').should('be.visible').clear().type(totalCost);
+    cy.get('#addExpenseMileage').should('be.visible').clear().type('110');
+
+    cy.get('.modal-footer .btn-primary').click();
+
+    cy.get('ngb-modal-window').should('not.exist');
+});
+

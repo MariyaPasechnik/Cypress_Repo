@@ -32,7 +32,7 @@ class AddFuel {
         this.openAddModal();
         
         this.modal.within(() => {
-            // Ждем, пока в поле пробега появится хоть какое-то значение больше 0
+            
             this.mileage.should('not.have.value', '');
             
             this.mileage.invoke('val').then((currentValue) => {
