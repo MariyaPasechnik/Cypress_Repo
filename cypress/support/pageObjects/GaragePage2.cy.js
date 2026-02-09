@@ -32,12 +32,11 @@ class AddFuel {
         this.openAddModal();
         
         this.modal.within(() => {
-            
             this.mileage.should('not.have.value', '');
-            
+
             this.mileage.invoke('val').then((currentValue) => {
                 const newMileage = Number(currentValue) + 10;
-                
+
                 this.mileage.clear().type(newMileage);
                 this.liters.clear().type(liters);
                 this.cost.clear().type(cost);
